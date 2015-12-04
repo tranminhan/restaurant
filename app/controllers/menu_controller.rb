@@ -4,4 +4,9 @@ class MenuController < ApplicationController
 
   def contact_us
   end
+
+  def section
+    @items = MenuItem.where("section like ?", params[:section])
+    # debugger
+  end 
 end

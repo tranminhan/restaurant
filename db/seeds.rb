@@ -84,7 +84,7 @@ MenuItem.create!(name: "Canh ga chien nuoc mam",
                  description: "Canh ga chien nuoc mam",
                  price: 50000,
                  section: "Dinner",
-                 image_url: "http://toinayangi.vn/wp-content/uploads/2015/11/s1.jpg")
+                 image_url: "http://quynhthoa.net/wp-content/uploads/2015/05/canh-ga-chien-nuoc-mam.jpg")
 
 MenuItem.create!(name: "Banh xeo", 
                  description: "Banh xeo",
@@ -110,13 +110,13 @@ MenuItem.create!(name: "Pepsi",
                  description: "Pepsi",
                  price: 20000,
                  section: "Drink",
-                 image_url: "http://toinayangi.vn/wp-content/uploads/2014/08/ca-kho-3.jpg")
+                 image_url: "http://www.bmstores.co.uk/images/hpcProductImage/imgFull/2059-Pepsi-330ml-Can.jpg")
 
 MenuItem.create!(name: "7 Up", 
                  description: "7 Up",
                  price: 20000,
                  section: "Drink",
-                 image_url: "http://toinayangi.vn/wp-content/uploads/2014/08/ca-kho-3.jpg")
+                 image_url: "http://onlinecashandcarry.co.uk/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/7/u/7up_330ml.jpg")
 
 MenuItem.create!(name: "Tra sua tran chau", 
                  description: "Tra sua tran chau",
