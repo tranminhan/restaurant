@@ -1,3 +1,19 @@
+<div class="jumbotron">
+  <h1><%= params[:section] %></h1>
+
+  <div class="text-center">
+    <form class="form-inline" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Filter">
+      </div>
+    </form>
+    <br>
+    <button type="button" class="btn btn-default">Price high to low</button>
+    <button type="button" class="btn btn-default">Price high to low</button>
+  </div>
+
+</div>
+
 <div class="row">
 
   <% @items.each do |item| %>
@@ -5,7 +21,7 @@
       <div class="thumbnail">
         <img src="<%= item.image_url %>" style="width: 243px; height: 200px;"alt="food">
         <div class="caption">
-          <h3><%= item.name %></h3>
+          <h3><%= link_to item.name, item_path(item.id) %></h3>
           <span><%= item.price %> VND</span>
           <p><%= item.description %></p>
           <p><a href="#" class="btn btn-primary" role="button">Order</a></p>

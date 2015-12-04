@@ -9,4 +9,8 @@ class MenuController < ApplicationController
     @items = MenuItem.where("section like ?", params[:section])
     # debugger
   end 
+
+  def item
+    @item = MenuItem.find(params[:id])
+  end 
 end
