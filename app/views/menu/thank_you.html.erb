@@ -1,8 +1,10 @@
-<h1>Thank you for your order!</h1>
-<br>
+<div class="jumbotron text-center">
+  <h1>Thank you for your order!</h1>
+</div>
 
 <div class="row">
-  <div class="col-md-8 col-md-offset-2">
+  <div class="col-md-6">
+    <h2>Delivery info</h2>
     <ul class="list-group text-left">
       <li class="list-group-item">
         <span>Order date: </span>
@@ -22,10 +24,9 @@
       </li>
     </ul>
   </div>
-</div>
 
-<div class="row" style="margin-top: 10px">
-  <div class="col-md-8 col-md-offset-2">
+  <div class="col-md-6">
+    <h2>Items</h2>
     <ul class="list-group text-left">
       <% session[:purchase].each do |mi| %>
         <li class="list-group-item">

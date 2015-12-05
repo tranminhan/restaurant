@@ -1,10 +1,18 @@
+<div class="row" style="min-height: 70px;">
+</div>
+
 <div class="row">
   <div class="col-md-6">
-    <img src="<%= @item.image_url %>" style="width: 486px; height: 400px;"alt="food">
+    <img src="<%= @item.image_url %>" width="486px;" height="400px;" alt="food">
   </div>
-  <div class="col-md-4" class="text-left pull-left">
+
+  <div class="col-md-4" class="pull-left">
     <h2><%= @item.name %></h2>
-    <p><%= @item.description %></p>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <p><%= @item.description %></p>
+      </div>
+    </div>
     <p>
       <%= form_tag add_path, method: "post" do %>
         <input type="hidden" name="id" value="<%= @item.id %>">

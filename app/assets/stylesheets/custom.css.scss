@@ -1,14 +1,17 @@
+@import "bootstrap-sprockets";
 @import "bootstrap";
 
 body {
-  padding-top: 5rem;
-}
-.starter-template {
-  padding: 3rem 1.5rem;
-  text-align: center;
+  padding-top: 30px;
 }
 
-.price {
-  color: red;
+.section-thumbnail {
+  border: 0;
+  text-align: center;
   font-weight: bold;
+  font-size: 20px;
+}  
+
+.item_thumbnail {
+  border: 0;
 }

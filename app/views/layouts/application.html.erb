@@ -8,26 +8,34 @@
 </head>
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <a class="navbar-brand" href="/">
-    <span><img src="http://i.imgur.com/0GsSHwX.png" width="50" height="50"> Galaxy Restaurant</span>
-  </a>
-  <ul class="nav nav-pills" style="padding-top: 7px">
-    <li class="nav-item">
-      <%= link_to "Menu", menu_path, class: "nav-link"%>
-    </li>
-    <li class="nav-item">
-      <%= link_to "Contact Us", contact_us_path, class: "nav-link"%>
-    </li>
-  </ul>
-</nav>
+ <!-- Fixed navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">
+          <span><img src="http://i.imgur.com/0GsSHwX.png" width="50" height="50"> Galaxy Restaurant</span>
+        </a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Contact Us", contact_us_path, class: "nav-link"%></li>
+          <li class="active">
+            <a href="/cart">
+              <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+              Cart
+            </a>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
 
 <div class="container">
 
-  <div class="starter-template">
-    <%= yield %>
-  </div>
-
+  <%= yield %>
+  
 </div><!-- /.container -->
 
 </body>

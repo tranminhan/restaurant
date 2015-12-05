@@ -1,29 +1,35 @@
-<div class="jumbotron">
+<div class="jumbotron text-center">
   <h1><%= params[:section] %></h1>
 
   <div class="btn-group" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-secondary" id="price-up">Price Up</button>
-    <button type="button" class="btn btn-secondary" id="price-down">Price Down</button>
-    <button type="button" class="btn btn-secondary" id="name-az">Alphabet</button>
+    <button type="button" class="btn btn-secondary" id="price-up">
+      <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+      Price Up</button>
+    <button type="button" class="btn btn-secondary" id="price-down">
+      <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+      Price Down</button>
+    <button type="button" class="btn btn-secondary" id="name-az">
+      <span class="glyphicon glyphicon-sort" aria-hidden="true"></span>
+      Name A-Z</button>
   </div>
 </div>
 
-<div class="row">
+<div>
+  <div class="row text-center">
+    <% @items.each do |item| %>
+      <div class="col-sm-6 col-md-4" style="margin-bottom: 20px">
+        <div class="thumbnail item_thumbnail">
+          <img src="<%= item.image_url %>" style="width: 243px; height: 200px;"alt="food">
+          <div class="caption">
+            <h5><%= link_to item.name, item_path(item.id) %></h5>
 
-  <% @items.each do |item| %>
-    <div class="col-sm-6 col-md-4" style="margin-bottom: 20px">
-      <div class="thumbnail">
-        <img src="<%= item.image_url %>" style="width: 243px; height: 200px;"alt="food">
-        <div class="caption">
-          <h5><%= link_to item.name, item_path(item.id) %></h5>
-
-          <%= form_tag add_path, method: "post" do %>
-            <input type="hidden" name="id" value="<%= item.id %>">
-            <button type="submit" class="btn btn-danger"><%= vnd(item.price) %></button>
-          <% end %>
+            <%= form_tag add_path, method: "post" do %>
+              <input type="hidden" name="id" value="<%= item.id %>">
+              <button type="submit" class="btn btn-danger"><%= vnd(item.price) %></button>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
-  
+    <% end %>
+  </div>
 </div>
