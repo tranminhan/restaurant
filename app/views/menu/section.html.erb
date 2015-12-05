@@ -2,15 +2,15 @@
   <h1><%= params[:section] %></h1>
 
   <div class="btn-group" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-secondary" id="price-up">
+    <a href="<%= request.path + '?sort=price+asc' %>" class="btn btn-default">
       <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
-      Price Up</button>
-    <button type="button" class="btn btn-secondary" id="price-down">
+      Price Up</a>
+    <a href="<%= request.path + '?sort=price+desc' %>" class="btn btn-default">
       <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-      Price Down</button>
-    <button type="button" class="btn btn-secondary" id="name-az">
-      <span class="glyphicon glyphicon-sort" aria-hidden="true"></span>
-      Name A-Z</button>
+      Price Down</a>
+    <a href="<%= request.path + '?sort=name+asc' %>" class="btn btn-default">
+        <span class="glyphicon glyphicon-sort" aria-hidden="true"></span>
+      Name A-Z</a>
   </div>
 </div>
 
