@@ -9,15 +9,17 @@
 <body>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
-    <a class="navbar-brand" href="#">Restaurant</a>
-    <ul class="nav nav-pills">
-      <li class="nav-item">
-        <%= link_to "Menu", menu_path, class: "nav-link"%>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Contact Us", contact_us_path, class: "nav-link"%>
-      </li>
-    </ul>
+  <a class="navbar-brand" href="/">
+    <span><img src="http://i.imgur.com/0GsSHwX.png" width="50" height="50"> Galaxy Restaurant</span>
+  </a>
+  <ul class="nav nav-pills" style="padding-top: 7px">
+    <li class="nav-item">
+      <%= link_to "Menu", menu_path, class: "nav-link"%>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Contact Us", contact_us_path, class: "nav-link"%>
+    </li>
+  </ul>
 </nav>
 
 <div class="container">

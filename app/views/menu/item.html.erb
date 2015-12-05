@@ -2,14 +2,13 @@
   <div class="col-md-6">
     <img src="<%= @item.image_url %>" style="width: 486px; height: 400px;"alt="food">
   </div>
-  <div class="col-md-4" class="text-left">
+  <div class="col-md-4" class="text-left pull-left">
     <h2><%= @item.name %></h2>
     <p><%= @item.description %></p>
     <p>
       <%= form_tag add_path, method: "post" do %>
         <input type="hidden" name="id" value="<%= @item.id %>">
-        <span class="price"><%= vnd(@item.price) %></span> - 
-        <button type="submit" class="btn btn-danger">Order</button>
+        <button type="submit" class="btn btn-danger"><%= vnd(@item.price) %></button>
       <% end %>
     </p>
   </div>
