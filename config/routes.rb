@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'menu'                 => 'menu#index'
-  get 'menu/:section'        => 'menu#section'
+  get 'menu/:section'        => 'menu#section', as: 'section'
   get 'contact-us'           => 'menu#contact_us'
   get 'item/:id'             => 'menu#item', as: 'item'
 

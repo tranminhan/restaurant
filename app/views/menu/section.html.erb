@@ -1,17 +1,11 @@
 <div class="jumbotron">
   <h1><%= params[:section] %></h1>
 
-  <div class="text-center">
-    <form class="form-inline" role="search">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Filter">
-      </div>
-    </form>
-    <br>
-    <button type="button" class="btn btn-default">Price high to low</button>
-    <button type="button" class="btn btn-default">Price high to low</button>
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-secondary" id="price-up">Price Up</button>
+    <button type="button" class="btn btn-secondary" id="price-down">Price Down</button>
+    <button type="button" class="btn btn-secondary" id="name-az">Alphabet</button>
   </div>
-
 </div>
 
 <div class="row">
