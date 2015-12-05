@@ -30,7 +30,7 @@ class MenuController < ApplicationController
   end 
 
   def cart
-    @total = session[:purchase].inject(0){ |sum, e| sum += e['price'].to_f }
+    @total = order_subtotal
   end
 
   def order 
@@ -42,6 +42,17 @@ class MenuController < ApplicationController
     # debugger
     @order_date = DateTime.now
     @shipping   = 20000
-    @total      = session[:purchase].inject(0){ |sum, e| sum += e['price'].to_f } + @shipping
+    @total      = order_subtotal + @shipping
+    order = {
+      "total" => @total,
+      "shipping" => @shipping,
+      "items" => session[:purchase]
+    }
+    # debugger
+    OrderMailer.order_confirmation(session[:address], order).deliver_now
   end
+
+  def order_subtotal
+    session[:purchase].inject(0){ |sum, e| sum += e['price'].to_f }
+  end 
 end
