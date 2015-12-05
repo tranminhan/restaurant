@@ -5,6 +5,10 @@
   <div class="col-md-8 col-md-offset-2">
     <ul class="list-group text-left">
       <li class="list-group-item">
+        <span>Order date: </span>
+        <span><%= pretty_time(@order_date) %></span>
+      </li>
+      <li class="list-group-item">
         <span>Email: </span>
         <span><%= session[:address]["email"] %></span>
       </li>
@@ -26,13 +30,13 @@
       <% session[:purchase].each do |mi| %>
         <li class="list-group-item">
           <span><%= mi['name'] %></span>
-          <span style="float: right"><%= mi['price'] %> VND</span>
+          <span style="float: right"><%= vnd(mi['price']) %></span>
         </li>
       <% end %>
     </ul>
     <div class="text-right" style="margin-top: 10px; color: red; font-weight: bold; padding-right: 20px">
-      <p><span>Shipping:</span> <%= @shipping %> VND</p>
-      <p><span>Total:</span> <%= @total %> VND</p>
+      <p><span>Shipping:</span> <%= vnd(@shipping) %></p>
+      <p><span>Total:</span> <%= vnd(@total) %></p>
     </div>
   </div>
 

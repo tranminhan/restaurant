@@ -8,7 +8,7 @@
     <p>
       <%= form_tag add_path, method: "post" do %>
         <input type="hidden" name="id" value="<%= @item.id %>">
-        <span class="price"><%= @item.price %> VND</span> - 
+        <span class="price"><%= vnd(@item.price) %></span> - 
         <button type="submit" class="btn btn-danger">Order</button>
       <% end %>
     </p>

@@ -33,7 +33,8 @@ class MenuController < ApplicationController
 
   def thank_you
     # debugger
-    @shipping = 20000
-    @total    = session[:purchase].inject(0){ |sum, e| sum += e['price'].to_f } + @shipping
+    @order_date = DateTime.now
+    @shipping   = 20000
+    @total      = session[:purchase].inject(0){ |sum, e| sum += e['price'].to_f } + @shipping
   end
 end
