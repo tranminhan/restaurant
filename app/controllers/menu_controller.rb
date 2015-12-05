@@ -25,4 +25,15 @@ class MenuController < ApplicationController
   def cart
     @total = session[:purchase].inject(0){ |sum, e| sum += e['price'].to_f }
   end
+
+  def order 
+    session[:address] = params[:address]
+    redirect_to thank_you_url
+  end
+
+  def thank_you
+    # debugger
+    @shipping = 20000
+    @total    = session[:purchase].inject(0){ |sum, e| sum += e['price'].to_f } + @shipping
+  end
 end

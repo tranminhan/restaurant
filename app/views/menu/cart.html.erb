@@ -18,21 +18,21 @@
   </div>
 
   <div class="col-md-6 text-left">
-    <form>
+    <%= form_tag order_path, method: "post" do %>
       <fieldset class="form-group">
         <label for="email">Email address</label>
-        <input type="email" class="form-control" id="email" name="email" placeholder="user@example.com">
+        <input type="email" class="form-control" id="email" name="address[email]" placeholder="user@example.com">
       </fieldset>
       <fieldset class="form-group">
         <label for="phone">Phone</label>
-        <input type="text" class="form-control" id="phone" name="phone" placeholder="090xxxxxx">
+        <input type="text" class="form-control" id="phone" name="address[phone]" placeholder="090xxxxxx">
       </fieldset>
       <fieldset class="form-group">
         <label for="address">Deliver Address</label>
-        <textarea class="form-control" id="address" name="address" rows="3"></textarea>
+        <textarea class="form-control" id="address" name="address[address]" rows="3"></textarea>
       </fieldset>
       <button type="submit" class="btn btn-danger">Order Now!</button>
-    </form>
+    <% end %>
   </div>
 </div>
 

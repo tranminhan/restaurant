@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get   'item/:id'             => 'menu#item', as: 'item'
   post  'add'                  => 'menu#add'
   get   'cart'                 => 'menu#cart'
+  post  'order'                => 'menu#order'
+  get   'thank-you'            => 'menu#thank_you', as: 'thank_you'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
