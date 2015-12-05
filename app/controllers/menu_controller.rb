@@ -22,6 +22,13 @@ class MenuController < ApplicationController
     redirect_to cart_url
   end 
 
+  def remove
+    session[:purchase] ||= []
+    session[:purchase].delete_at(params[:index].to_i)
+    # debugger
+    redirect_to cart_url
+  end 
+
   def cart
     @total = session[:purchase].inject(0){ |sum, e| sum += e['price'].to_f }
   end

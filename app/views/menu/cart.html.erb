@@ -5,15 +5,24 @@
 <div class="row">
   <div class="col-md-4" style="padding-top: 35px; margin-right: 40px">
     <ul class="list-group text-left">
-      <% session[:purchase].each do |mi| %>
+      <% session[:purchase].each_with_index do |mi, index| %>
         <li class="list-group-item">
-          <span><%= mi['name'] %></span>
-          <span style="float: right"><%= vnd(mi['price']) %></span>
+          <span>
+            <%= form_tag remove_path, method: "post", role:"form", class: "form-inline", style: "display: inline-block" do %>
+              <input type="hidden" name="index" value="<%= index %>">
+              <button type="submit" class="btn btn-link">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+              </button>
+            <% end %>
+
+            <%= mi['name'] %>
+          </span>
+          <span style="float: right; margin-top: 5px;"><%= vnd(mi['price']) %></span>
         </li>
       <% end %>
     </ul>
     <div class="pull-right" style="margin-top: 10px; color: red; font-weight: bold; padding-right: 20px">
-      <span>Total: <%= vnd(@total) %> VND</span>
+      <span>Total: <%= vnd(@total) %></span>
     </div>
   </div>
 

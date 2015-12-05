@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get   'contact-us'           => 'menu#contact_us'
   get   'item/:id'             => 'menu#item', as: 'item'
   post  'add'                  => 'menu#add'
+  post  'remove'               => 'menu#remove', as: 'remove'
   get   'cart'                 => 'menu#cart'
   post  'order'                => 'menu#order'
   get   'thank-you'            => 'menu#thank_you', as: 'thank_you'
