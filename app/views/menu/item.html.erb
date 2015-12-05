@@ -6,8 +6,11 @@
     <h2><%= @item.name %></h2>
     <p><%= @item.description %></p>
     <p>
-      <span class="price"><%= @item.price %> VND</span> - 
-      <button type="button" class="btn btn-danger">Order</button>
+      <%= form_tag add_path, method: "post" do %>
+        <input type="hidden" name="id" value="<%= @item.id %>">
+        <span class="price"><%= @item.price %> VND</span> - 
+        <button type="submit" class="btn btn-danger">Order</button>
+      <% end %>
     </p>
   </div>
     

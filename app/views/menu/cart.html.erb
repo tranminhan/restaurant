@@ -1,0 +1,40 @@
+<div class="row" style="margin-bottom: 20px; margin-top: 0">
+  <h1>Order</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-4" style="padding-top: 35px; margin-right: 40px">
+    <ul class="list-group text-left">
+      <% session[:purchase].each do |mi| %>
+        <li class="list-group-item">
+          <span><%= mi['name'] %></span>
+          <span style="float: right"><%= mi['price'] %> VND</span>
+        </li>
+      <% end %>
+    </ul>
+    <div class="pull-right" style="margin-top: 10px; color: red; font-weight: bold; padding-right: 20px">
+      <span>Total: <%= @total %> VND</span>
+    </div>
+  </div>
+
+  <div class="col-md-6 text-left">
+    <form>
+      <fieldset class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="user@example.com">
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="phone">Phone</label>
+        <input type="text" class="form-control" id="phone" name="phone" placeholder="090xxxxxx">
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="address">Deliver Address</label>
+        <textarea class="form-control" id="address" name="address" rows="3"></textarea>
+      </fieldset>
+      <button type="submit" class="btn btn-danger">Order Now!</button>
+    </form>
+  </div>
+</div>
+
+
+

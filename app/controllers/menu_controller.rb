@@ -14,4 +14,15 @@ class MenuController < ApplicationController
   def item
     @item = MenuItem.find(params[:id])
   end 
+
+  def add
+    session[:purchase] ||= []
+    session[:purchase] << MenuItem.find(params[:id])
+    # debugger
+    redirect_to cart_url
+  end 
+
+  def cart
+    @total = session[:purchase].inject(0){ |sum, e| sum += e['price'].to_f }
+  end
 end

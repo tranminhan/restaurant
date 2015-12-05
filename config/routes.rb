@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  get 'menu'                 => 'menu#index'
-  get 'menu/:section'        => 'menu#section', as: 'section'
-  get 'contact-us'           => 'menu#contact_us'
-  get 'item/:id'             => 'menu#item', as: 'item'
+  get   'menu'                 => 'menu#index'
+  get   'menu/:section'        => 'menu#section', as: 'section'
+  get   'contact-us'           => 'menu#contact_us'
+  get   'item/:id'             => 'menu#item', as: 'item'
+  post  'add'                  => 'menu#add'
+  get   'cart'                 => 'menu#cart'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
