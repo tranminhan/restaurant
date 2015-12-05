@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-6">
+    <img src="<%= @item.image_url %>" style="width: 486px; height: 400px;"alt="food">
+  </div>
+  <div class="col-md-4" class="text-left">
+    <h2><%= @item.name %></h2>
+    <p><%= @item.description %></p>
+    <p>
+      <span class="price"><%= @item.price %> VND</span> - 
+      <button type="button" class="btn btn-danger">Order</button>
+    </p>
+  </div>
+    
+</div>

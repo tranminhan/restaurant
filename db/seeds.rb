@@ -25,7 +25,7 @@ MenuItem.create!(name: "Pho ga",
                  image_url: "http://i.imgur.com/TYW7iMn.jpg")
 
 MenuItem.create!(name: "Banh mi", 
-                 description: "Bread",
+                 description: "A product of Vietnam’s colonial past, the beloved concoction combines a crunchy French baguette with pork, pate and an ever-changing array of fresh vegetables",
                  price: 20000,
                  section: "Breakfast",
                  image_url: "http://i.imgur.com/uN5i2Os.jpg")
