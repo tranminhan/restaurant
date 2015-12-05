@@ -8,12 +8,12 @@
       <% session[:purchase].each do |mi| %>
         <li class="list-group-item">
           <span><%= mi['name'] %></span>
-          <span style="float: right"><%= mi['price'] %> VND</span>
+          <span style="float: right"><%= vnd(mi['price']) %></span>
         </li>
       <% end %>
     </ul>
     <div class="pull-right" style="margin-top: 10px; color: red; font-weight: bold; padding-right: 20px">
-      <span>Total: <%= @total %> VND</span>
+      <span>Total: <%= vnd(@total) %> VND</span>
     </div>
   </div>
 
