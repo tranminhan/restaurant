@@ -5,7 +5,7 @@ module ApplicationHelper
   end 
 
   def pretty_time(time) 
-    time.strftime "%a, %b %d, %H:%M"
+    time.strftime "%a, %b %d %Y, %H:%M"
   end 
 
 end

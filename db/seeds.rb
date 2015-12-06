@@ -129,3 +129,11 @@ MenuItem.create!(name: "Sting dau",
                  price: 20000,
                  section: "Drink",
                  image_url: "http://www.hangnoitro.com/wp-content/uploads/2013/04/sting.jpg")
+
+
+# seeds reviews
+MenuItem.all.each do |mi|
+  rand(5).times do 
+    mi.reviews << Review.new( comment: Faker::Lorem.paragraph, username: Faker::Name.name, star: Faker::Number.between(1, 5))
+  end
+end
