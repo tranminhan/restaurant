@@ -22,7 +22,7 @@
           <img src="<%= item.image_url %>" style="width: 243px; height: 200px;"alt="food">
           <div class="caption">
             <h5><%= link_to item.name, item_path(item.id) %></h5>
-
+            <input type="number" class="rating" value="<%= item.avg_review %>" data-value="<%= item.avg_review %>" disabled>
             <%= form_tag add_path, method: "post" do %>
               <input type="hidden" name="id" value="<%= item.id %>">
               <button type="submit" class="btn btn-danger"><%= vnd(item.price) %></button>
