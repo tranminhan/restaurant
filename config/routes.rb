@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post  'remove'               => 'menu#remove', as: 'remove'
   get   'cart'                 => 'menu#cart'
   post  'order'                => 'menu#order'
+  post  'review'               => 'menu#review'
   get   'thank-you'            => 'menu#thank_you', as: 'thank_you'
 
   # The priority is based upon order of creation: first created -> highest priority.

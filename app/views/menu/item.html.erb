@@ -22,12 +22,19 @@
 
     <hr/>
     <h4>Leave a comment:</h4>
-    <form role="form">
+    <%= form_tag review_path, method: "post" do %>
+      <input type="hidden" name="review[item_id]" value="<%= @item.id %>">
       <div class="form-group">
-        <textarea class="form-control" rows="3" required></textarea>
+        <input id="rating-system" name="review[star]" type="number" class="rating" min="1" max="5" step="1">
+      </div>
+      <div class="form-group">
+        <input class="form-control" name="review[username]" type="text" placeholder="Name">
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" name="review[comment]" rows="3" required placeholder="Comment"></textarea>
       </div>
       <button type="submit" class="btn btn-success">Submit</button>
-    </form>
+    <% end %>
     <br/><br/>
 
     <p><span class="badge"><%= @item.reviews.count %></span> Comments:</p>
@@ -35,6 +42,7 @@
       <% @item.reviews.each do |review| %>
         <div class="col-sm-10">
           <h4><%= review.username %> <small><%= pretty_time(review.created_at) %></small></h4>
+          <input type="number" class="rating readonly-rating" value="<%= review.star %>" disabled>
           <p><%= review.comment %></p>
           <br/>
         </div>

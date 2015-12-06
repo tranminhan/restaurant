@@ -38,6 +38,15 @@ class MenuController < ApplicationController
     redirect_to thank_you_url
   end
 
+  def review
+    @item = MenuItem.find(params[:review][:item_id])
+    @item.reviews << Review.new(username: params[:review][:username], star: params[:review][:star], comment: params[:review][:comment])
+    @item.save!
+    debugger
+    redirect_to item_url(@item)
+  end
+
+  # TODO clear session after thank you
   def thank_you
     # debugger
     @order_date = DateTime.now
