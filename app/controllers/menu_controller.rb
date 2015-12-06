@@ -6,7 +6,8 @@ class MenuController < ApplicationController
   end
 
   def section
-    # debugger
+    # debugger    
+    return @items = MenuItem.where("section like ?", params[:section]).sort_by {|x| -x.avg_review} if params[:sort] == "rating"
     @items = MenuItem.where("section like ?", params[:section]).order(params[:sort])
     # debugger
   end 
